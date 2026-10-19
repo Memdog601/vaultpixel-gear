@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+      Author: Memphis Mitchell
+      Date: 10/18/2026
+      Purpose: Shop page for the VaultPixel Gear e-commerce project.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop | VaultPixel Gear</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html">VaultPixel Gear</a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html">Cart</a>
+      <a href="checkout.html">Checkout</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <header>
+    <h1>Shop</h1>
+    <p>Browse gaming and desk-setup accessories.</p>
+  </header>
+
+  <section class="filters" aria-labelledby="filter-heading">
+    <h2 id="filter-heading">Browse Products</h2>
+    <label for="category">Category</label>
+    <select id="category" name="category">
+      <option>All Products</option>
+      <option>Keyboards</option>
+      <option>Desk Accessories</option>
+      <option>Audio Accessories</option>
+    </select>
+  </section>
+
+  <section class="product-grid" aria-label="Product catalog">
+    <article class="product-card">
+      <div class="product-art" aria-hidden="true">⌨</div>
+      <h2>Pulse 75 Keyboard</h2><p>Hot-swap mechanical keyboard.</p><p class="price">$89.99</p>
+      <a class="button" href="product.html">View Details</a>
+    </article>
+    <article class="product-card">
+      <div class="product-art" aria-hidden="true">◫</div>
+      <h2>Nova RGB Desk Mat</h2><p>Extended surface with RGB edge lighting.</p><p class="price">$39.99</p>
+      <a class="button" href="product.html">View Details</a>
+    </article>
+    <article class="product-card">
+      <div class="product-art" aria-hidden="true">◉</div>
+      <h2>EchoCore Headset Stand</h2><p>Aluminum stand with cable routing.</p><p class="price">$29.99</p>
+      <a class="button" href="product.html">View Details</a>
+    </article>
+    <article class="product-card">
+      <div class="product-art" aria-hidden="true">✦</div>
+      <h2>Flux Cable Kit</h2><p>Reusable clips and sleeves for cleaner cable management.</p><p class="price">$19.99</p>
+      <a class="button" href="product.html">View Details</a>
+    </article>
+  </section>
+</main>
+<footer class="site-footer">
+  <p>&copy; 2026 VaultPixel Gear. Designed by Memphis Mitchell.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+      Author: Memphis Mitchell
+      Date: 10/18/2026
+      Purpose: Cart page for the VaultPixel Gear e-commerce project.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart | VaultPixel Gear</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html">VaultPixel Gear</a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html">Cart</a>
+      <a href="checkout.html">Checkout</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <header>
+    <h1>Your Cart</h1>
+    <p>Review your selected products before checkout.</p>
+  </header>
+
+  <section aria-labelledby="cart-heading">
+    <h2 id="cart-heading">Cart Items</h2>
+    <table>
+      <thead>
+        <tr><th>Product</th><th>Quantity</th><th>Price</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Pulse 75 Keyboard</td><td>1</td><td>$89.99</td></tr>
+        <tr><td>Nova RGB Desk Mat</td><td>1</td><td>$39.99</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <aside class="summary-card" aria-labelledby="summary-heading">
+    <h2 id="summary-heading">Order Summary</h2>
+    <p>Subtotal: <strong>$129.98</strong></p>
+    <p>Estimated shipping: <strong>$8.00</strong></p>
+    <p>Total: <strong>$137.98</strong></p>
+    <div class="cart-actions">
+      <a class="button secondary" href="shop.html">Continue Shopping</a>
+      <a class="button" href="checkout.html">Proceed to Checkout</a>
+    </div>
+  </aside>
+</main>
+<footer class="site-footer">
+  <p>&copy; 2026 VaultPixel Gear. Designed by Memphis Mitchell.</p>
+</footer>
+</body>
+</html>

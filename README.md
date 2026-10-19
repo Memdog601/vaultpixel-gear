@@ -1,38 +1,27 @@
-# VaultPixel Gear
+# VaultPixel Gear - Milestone 2
 
-VaultPixel Gear is a planned e-commerce website focused on gaming accessories and desk-setup products. The project will emphasize simple navigation, accessible color contrast, responsive layouts, clear product information, and a streamlined checkout experience.
+VaultPixel Gear is a responsive e-commerce prototype for gaming accessories and desk-setup gear.
 
-## Planned Pages
-- Store Homepage
-- Shop / Product Catalog
-- Product Details
-- Cart
-- Checkout
+## Pages
+- `index.html` - Store Homepage
+- `shop.html` - Product Catalog
+- `product.html` - Product Details
+- `cart.html` - Shopping Cart
+- `checkout.html` - Checkout
+- `styles.css` - Shared brand theme and responsive layout
 
-## Feature Roadmap
+## Milestone Progress
+- Semantic HTML framework created for every planned page
+- Shared external stylesheet added
+- Responsive mobile/tablet/desktop layouts implemented
+- Homepage hero and featured-product cards implemented
+- Product catalog structure created
+- Product detail purchase controls created
+- Cart and checkout layouts created
+- Accessible labels, navigation landmarks, headings, and responsive breakpoints added
 
-### Week 1 — Planning and Structure
-- Define business model and target audience
-- Create product data model
-- Create site map and navigation flow
-- Establish accessible brand palette
-- Build initial `index.html`
-
-### Week 2 — Storefront Layout
-- Build homepage hero and featured products
-- Create responsive navigation
-- Build reusable product-card layout
-- Add external CSS and responsive styling
-
-### Week 3 — Shopping Experience
-- Build shop/catalog page
-- Build product detail page
-- Create cart layout and quantity controls
-- Add basic form validation and accessible labels
-
-### Week 4 — Checkout and QA
-- Build checkout form
-- Add order-review section
-- Perform accessibility and contrast checks
-- Test responsive layouts and navigation
-- Finalize documentation and screenshots
+## Next Steps
+- Add real product images
+- Add JavaScript for cart behavior and catalog filtering
+- Add validation and order confirmation behavior
+- Perform final accessibility and responsive testing

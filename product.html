@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+      Author: Memphis Mitchell
+      Date: 10/18/2026
+      Purpose: Product Details page for the VaultPixel Gear e-commerce project.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details | VaultPixel Gear</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html">VaultPixel Gear</a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html">Cart</a>
+      <a href="checkout.html">Checkout</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <nav aria-label="Breadcrumb"><a href="shop.html">Shop</a> / Pulse 75 Keyboard</nav>
+
+  <article class="detail-grid">
+    <section class="info-card">
+      <div class="product-art" aria-hidden="true">⌨</div>
+      <h1>Pulse 75 Keyboard</h1>
+      <p class="price">$89.99</p>
+      <p>A compact hot-swap mechanical keyboard designed for gaming, study, and everyday work.</p>
+    </section>
+
+    <section class="form-card" aria-labelledby="purchase-heading">
+      <h2 id="purchase-heading">Purchase Options</h2>
+      <p><strong>Availability:</strong> In stock</p>
+      <label for="switch">Switch Type</label>
+      <select id="switch" name="switch">
+        <option>Linear</option>
+        <option>Tactile</option>
+        <option>Clicky</option>
+      </select>
+      <label for="quantity">Quantity</label>
+      <input id="quantity" name="quantity" type="number" min="1" value="1">
+      <div class="cart-actions">
+        <a class="button" href="cart.html">Add to Cart</a>
+      </div>
+    </section>
+  </article>
+
+  <section class="info-card">
+    <h2>Product Details</h2>
+    <ul>
+      <li>75% compact layout</li>
+      <li>Hot-swappable switch sockets</li>
+      <li>USB-C connection</li>
+      <li>Adjustable backlighting</li>
+    </ul>
+  </section>
+</main>
+<footer class="site-footer">
+  <p>&copy; 2026 VaultPixel Gear. Designed by Memphis Mitchell.</p>
+</footer>
+</body>
+</html>

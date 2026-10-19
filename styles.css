@@ -1,0 +1,256 @@
+/*
+    Project: VaultPixel Gear
+    Author: Memphis Mitchell
+    Updated: 10/18/2026
+    Purpose: Shared brand theme and responsive layout for the VaultPixel Gear e-commerce website.
+*/
+
+:root {
+    --ink: #111827;
+    --cloud: #f8fafc;
+    --blue: #1d4ed8;
+    --teal: #0f766e;
+    --gold: #fde68a;
+    --white: #ffffff;
+    --muted: #475569;
+    --line: #d1d5db;
+    --panel: #eef2ff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--cloud);
+    color: var(--ink);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--blue);
+}
+
+.site-header {
+    background: var(--ink);
+    color: var(--white);
+}
+
+.nav-wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.brand {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.site-nav {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.site-nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 1.25rem;
+}
+
+.hero {
+    margin: 1rem 0 2rem;
+    padding: 3rem 2rem;
+    border-radius: 18px;
+    background: var(--blue);
+    color: var(--white);
+}
+
+.hero h1 {
+    margin-top: 0;
+    font-size: clamp(2rem, 6vw, 3.6rem);
+}
+
+.hero p {
+    max-width: 700px;
+    font-size: 1.1rem;
+}
+
+.button,
+button {
+    display: inline-block;
+    border: 0;
+    border-radius: 9px;
+    padding: .8rem 1.1rem;
+    background: var(--blue);
+    color: var(--white);
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.hero .button {
+    background: var(--gold);
+    color: var(--ink);
+}
+
+.button.secondary {
+    background: var(--teal);
+}
+
+.section-heading {
+    margin-bottom: .75rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+.product-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-left: 5px solid var(--teal);
+    border-radius: 12px;
+    padding: 1.1rem;
+}
+
+.product-card h2,
+.product-card h3 {
+    margin-top: 0;
+}
+
+.product-art {
+    min-height: 150px;
+    border-radius: 10px;
+    background: var(--panel);
+    display: grid;
+    place-items: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.price {
+    color: var(--blue);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.feature-grid,
+.checkout-grid,
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+.info-card,
+.summary-card,
+.form-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 1.25rem;
+}
+
+.filters {
+    margin-bottom: 1.25rem;
+    background: var(--white);
+    padding: 1rem;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+}
+
+label {
+    display: block;
+    font-weight: 700;
+    margin-top: .85rem;
+}
+
+input,
+select {
+    width: 100%;
+    max-width: 520px;
+    padding: .7rem;
+    border: 1px solid #94a3b8;
+    border-radius: 7px;
+    font: inherit;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+}
+
+th,
+td {
+    padding: .8rem;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+}
+
+th {
+    background: #e2e8f0;
+}
+
+.cart-actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: .75rem;
+    flex-wrap: wrap;
+}
+
+.site-footer {
+    margin-top: 2rem;
+    background: var(--ink);
+    color: var(--white);
+    padding: 1.25rem;
+    text-align: center;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .feature-grid,
+    .checkout-grid,
+    .detail-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

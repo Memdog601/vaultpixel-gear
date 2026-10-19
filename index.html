@@ -1,30 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--
-        Author: Memphis Mitchell
-        Date: 10/11/2026
-        Purpose: Initial homepage file for the VaultPixel Gear e-commerce project.
-    -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VaultPixel Gear</title>
+  <!--
+      Author: Memphis Mitchell
+      Date: 10/18/2026
+      Purpose: Home page for the VaultPixel Gear e-commerce project.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | VaultPixel Gear</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>VaultPixel Gear</h1>
-        <p>Gaming accessories and desk gear for a cleaner, better setup.</p>
-    </header>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html">VaultPixel Gear</a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html">Cart</a>
+      <a href="checkout.html">Checkout</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero" aria-labelledby="hero-title">
+    <h1 id="hero-title">Upgrade Your Setup.</h1>
+    <p>Gaming accessories and desk gear for players, students, and creators who want a clean, functional setup.</p>
+    <a class="button" href="shop.html">Shop Featured Gear</a>
+  </section>
 
-    <main>
-        <section>
-            <h2>Store Coming Soon</h2>
-            <p>This repository will be developed into the VaultPixel Gear e-commerce website.</p>
-        </section>
-    </main>
+  <section aria-labelledby="featured-title">
+    <h2 class="section-heading" id="featured-title">Featured Products</h2>
+    <div class="product-grid">
+      <article class="product-card">
+        <div class="product-art" aria-hidden="true">⌨</div>
+        <h3>Pulse 75 Keyboard</h3>
+        <p>Compact hot-swap mechanical keyboard with a clean 75% layout.</p>
+        <p class="price">$89.99</p>
+        <a class="button secondary" href="product.html">View Product</a>
+      </article>
+      <article class="product-card">
+        <div class="product-art" aria-hidden="true">◫</div>
+        <h3>Nova RGB Desk Mat</h3>
+        <p>Extended desk mat with stitched edges and USB-powered edge lighting.</p>
+        <p class="price">$39.99</p>
+        <a class="button secondary" href="product.html">View Product</a>
+      </article>
+      <article class="product-card">
+        <div class="product-art" aria-hidden="true">◉</div>
+        <h3>EchoCore Headset Stand</h3>
+        <p>Weighted aluminum stand with built-in cable management.</p>
+        <p class="price">$29.99</p>
+        <a class="button secondary" href="product.html">View Product</a>
+      </article>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2026 Memphis Mitchell</p>
-    </footer>
+  <section class="feature-grid" aria-label="Store benefits">
+    <article class="info-card"><h2>Fast Shipping</h2><p>Clear delivery estimates before checkout.</p></article>
+    <article class="info-card"><h2>Accessible Design</h2><p>Readable contrast, semantic structure, and keyboard-friendly navigation.</p></article>
+    <article class="info-card"><h2>Simple Checkout</h2><p>Review your cart, shipping details, and order total in one flow.</p></article>
+  </section>
+</main>
+<footer class="site-footer">
+  <p>&copy; 2026 VaultPixel Gear. Designed by Memphis Mitchell.</p>
+</footer>
 </body>
 </html>
