@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+      Author: Memphis Mitchell
+      Date: 10/25/2026
+      Purpose: Contact page for the VaultPixel Gear e-commerce project.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | VaultPixel Gear</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html">VaultPixel Gear</a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">Cart</a>
+      <a href="checkout.html">Checkout</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <header>
+    <h1>Contact VaultPixel Gear</h1>
+    <p>Send a question about products, orders, or your setup.</p>
+  </header>
+
+  <section class="form-card" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Contact Form</h2>
+    <form id="contactForm" novalidate>
+      <div class="field">
+        <label for="contactName">Full Name</label>
+        <input id="contactName" name="contactName" type="text" autocomplete="name">
+        <p class="field-error"></p>
+      </div>
+
+      <div class="field">
+        <label for="contactEmail">Email Address *</label>
+        <input id="contactEmail" name="contactEmail" type="email" autocomplete="email" required>
+        <p class="field-error"></p>
+      </div>
+
+      <div class="field">
+        <label for="contactSubject">Subject</label>
+        <input id="contactSubject" name="contactSubject" type="text">
+        <p class="field-error"></p>
+      </div>
+
+      <div class="field">
+        <label for="contactMessage">Message *</label>
+        <textarea id="contactMessage" name="contactMessage" required></textarea>
+        <p class="field-error"></p>
+      </div>
+
+      <button type="submit">Validate Message</button>
+      <p id="contactStatus" class="form-status" aria-live="polite"></p>
+    </form>
+  </section>
+</main>
+<footer class="site-footer">
+  <p>&copy; 2026 VaultPixel Gear. Designed by Memphis Mitchell.</p>
+</footer>
+</body>
+</html>

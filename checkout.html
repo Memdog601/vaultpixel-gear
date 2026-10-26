@@ -3,13 +3,14 @@
 <head>
   <!--
       Author: Memphis Mitchell
-      Date: 10/18/2026
+      Date: 10/25/2026
       Purpose: Checkout page for the VaultPixel Gear e-commerce project.
   -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Checkout | VaultPixel Gear</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
 <header class="site-header">
@@ -18,6 +19,7 @@
     <nav class="site-nav" aria-label="Primary navigation">
       <a href="index.html">Home</a>
       <a href="shop.html">Shop</a>
+      <a href="contact.html">Contact</a>
       <a href="cart.html">Cart</a>
       <a href="checkout.html">Checkout</a>
     </nav>
@@ -26,46 +28,104 @@
 <main>
   <header>
     <h1>Checkout</h1>
-    <p>Enter your shipping and contact information, then review your order.</p>
+    <p>Enter your purchase and shipping details. Required fields are validated with JavaScript.</p>
   </header>
 
-  <div class="checkout-grid">
-    <section class="form-card" aria-labelledby="shipping-heading">
-      <h2 id="shipping-heading">Shipping Information</h2>
-      <form>
-        <label for="name">Full Name</label>
-        <input id="name" name="name" type="text" autocomplete="name" required>
+  <form id="checkoutForm" novalidate>
+    <div class="checkout-grid">
+      <section class="form-card" aria-labelledby="purchase-heading">
+        <h2 id="purchase-heading">Purchase Information</h2>
 
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" autocomplete="email" required>
-
-        <label for="address">Street Address</label>
-        <input id="address" name="address" type="text" autocomplete="street-address" required>
-
-        <label for="city">City</label>
-        <input id="city" name="city" type="text" autocomplete="address-level2" required>
-
-        <label for="state">State</label>
-        <input id="state" name="state" type="text" autocomplete="address-level1" required>
-
-        <label for="zip">ZIP Code</label>
-        <input id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" required>
-
-        <div class="cart-actions">
-          <button type="submit">Place Order</button>
+        <div class="field">
+          <label for="cardholderName">Cardholder Name *</label>
+          <input id="cardholderName" name="cardholderName" type="text" autocomplete="cc-name" required>
+          <p class="field-error"></p>
         </div>
-      </form>
-    </section>
+
+        <div class="field">
+          <label for="cardNumber">Credit Card Number *</label>
+          <input id="cardNumber" name="cardNumber" type="text" inputmode="numeric" autocomplete="cc-number" placeholder="1111 2222 3333 4444" required>
+          <p class="field-error"></p>
+        </div>
+
+        <div class="field">
+          <label for="expiration">Expiration Date *</label>
+          <input id="expiration" name="expiration" type="month" autocomplete="cc-exp" required>
+          <p class="field-error"></p>
+        </div>
+
+        <div class="field">
+          <label for="securityCode">Security Code *</label>
+          <input id="securityCode" name="securityCode" type="text" inputmode="numeric" autocomplete="cc-csc" maxlength="4" required>
+          <p class="field-error"></p>
+        </div>
+
+        <div class="field">
+          <label for="couponCode">Coupon Code</label>
+          <div class="coupon-row">
+            <input id="couponCode" name="couponCode" type="text" placeholder="Try SAVE10">
+            <button id="applyCoupon" type="button">Apply Coupon</button>
+          </div>
+          <p id="couponStatus" class="form-status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="form-card" aria-labelledby="shipping-heading">
+        <h2 id="shipping-heading">Shipping Information</h2>
+
+        <div class="field">
+          <label for="shipName">Full Name *</label>
+          <input id="shipName" name="shipName" type="text" autocomplete="name" required>
+          <p class="field-error"></p>
+        </div>
+
+        <div class="field">
+          <label for="streetAddress">Street Address *</label>
+          <input id="streetAddress" name="streetAddress" type="text" autocomplete="street-address" required>
+          <p class="field-error"></p>
+        </div>
+
+        <div class="field">
+          <label for="city">City *</label>
+          <input id="city" name="city" type="text" autocomplete="address-level2" required>
+          <p class="field-error"></p>
+        </div>
+
+        <div class="field">
+          <label for="state">State *</label>
+          <input id="state" name="state" type="text" autocomplete="address-level1" required>
+          <p class="field-error"></p>
+        </div>
+
+        <div class="field">
+          <label for="zip">ZIP Code *</label>
+          <input id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" required>
+          <p class="field-error"></p>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone Number *</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+          <p class="field-error"></p>
+        </div>
+      </section>
+    </div>
 
     <aside class="summary-card" aria-labelledby="order-heading">
       <h2 id="order-heading">Order Review</h2>
-      <p>Pulse 75 Keyboard — $89.99</p>
-      <p>Nova RGB Desk Mat — $39.99</p>
-      <hr>
-      <p><strong>Total: $137.98</strong></p>
-      <p>This course prototype does not process real payments.</p>
+      <ul class="order-lines">
+        <li class="order-line"><span>Pulse 75 Keyboard × 1</span><strong>$89.99</strong></li>
+        <li class="order-line"><span>Nova RGB Desk Mat × 1</span><strong>$39.99</strong></li>
+      </ul>
+      <p class="order-line"><span>Subtotal</span><strong id="subtotal">$0.00</strong></p>
+      <p class="order-line"><span>Shipping</span><strong id="shipping">$0.00</strong></p>
+      <p class="order-line"><span>Discount</span><strong id="discount">-$0.00</strong></p>
+      <p class="total-line"><span>Total</span><strong id="orderTotal">$0.00</strong></p>
+      <button type="submit">Validate & Place Order</button>
+      <p id="checkoutStatus" class="form-status" aria-live="polite"></p>
+      <p><small>This course prototype does not process real payments.</small></p>
     </aside>
-  </div>
+  </form>
 </main>
 <footer class="site-footer">
   <p>&copy; 2026 VaultPixel Gear. Designed by Memphis Mitchell.</p>

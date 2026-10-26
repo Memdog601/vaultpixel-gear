@@ -1,8 +1,8 @@
 /*
     Project: VaultPixel Gear
     Author: Memphis Mitchell
-    Updated: 10/18/2026
-    Purpose: Shared brand theme and responsive layout for the VaultPixel Gear e-commerce website.
+    Updated: 10/25/2026
+    Purpose: Brand theme, responsive product layout, and form styling.
 */
 
 :root {
@@ -15,11 +15,11 @@
     --muted: #475569;
     --line: #d1d5db;
     --panel: #eef2ff;
+    --danger: #b91c1c;
+    --success: #166534;
 }
 
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
     margin: 0;
@@ -29,9 +29,7 @@ body {
     line-height: 1.6;
 }
 
-a {
-    color: var(--blue);
-}
+a { color: var(--blue); }
 
 .site-header {
     background: var(--ink);
@@ -69,9 +67,7 @@ a {
 }
 
 .site-nav a:hover,
-.site-nav a:focus {
-    text-decoration: underline;
-}
+.site-nav a:focus { text-decoration: underline; }
 
 main {
     max-width: 1180px;
@@ -92,10 +88,7 @@ main {
     font-size: clamp(2rem, 6vw, 3.6rem);
 }
 
-.hero p {
-    max-width: 700px;
-    font-size: 1.1rem;
-}
+.hero p { max-width: 700px; font-size: 1.1rem; }
 
 .button,
 button {
@@ -110,18 +103,10 @@ button {
     cursor: pointer;
 }
 
-.hero .button {
-    background: var(--gold);
-    color: var(--ink);
-}
+.hero .button { background: var(--gold); color: var(--ink); }
+.button.secondary { background: var(--teal); }
 
-.button.secondary {
-    background: var(--teal);
-}
-
-.section-heading {
-    margin-bottom: .75rem;
-}
+.section-heading { margin-bottom: .75rem; }
 
 .product-grid {
     display: grid;
@@ -138,9 +123,7 @@ button {
 }
 
 .product-card h2,
-.product-card h3 {
-    margin-top: 0;
-}
+.product-card h3 { margin-top: 0; }
 
 .product-art {
     min-height: 150px;
@@ -150,6 +133,15 @@ button {
     place-items: center;
     font-size: 3rem;
     margin-bottom: 1rem;
+}
+
+.eyebrow {
+    margin: 0 0 .35rem;
+    color: var(--muted);
+    font-size: .8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
 }
 
 .price {
@@ -183,20 +175,77 @@ button {
     border-radius: 10px;
 }
 
-label {
+.field { margin-bottom: 1rem; }
+
+label,
+legend {
     display: block;
     font-weight: 700;
-    margin-top: .85rem;
+    margin-bottom: .35rem;
 }
 
 input,
-select {
+select,
+textarea {
     width: 100%;
-    max-width: 520px;
-    padding: .7rem;
+    padding: .72rem;
     border: 1px solid #94a3b8;
     border-radius: 7px;
     font: inherit;
+    background: var(--white);
+}
+
+textarea { min-height: 130px; resize: vertical; }
+
+fieldset {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.input-error {
+    border-color: var(--danger);
+    outline: 2px solid rgba(185, 28, 28, .12);
+}
+
+.field-error {
+    min-height: 1.2em;
+    margin: .25rem 0 0;
+    color: var(--danger);
+    font-size: .9rem;
+}
+
+.form-status {
+    margin-top: 1rem;
+    font-weight: 700;
+}
+
+.form-status.success { color: var(--success); }
+.form-status.error { color: var(--danger); }
+
+.coupon-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .5rem;
+}
+
+.order-lines {
+    list-style: none;
+    padding: 0;
+}
+
+.order-line,
+.total-line {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 1px solid var(--line);
+    padding: .55rem 0;
+}
+
+.total-line {
+    font-size: 1.15rem;
+    font-weight: 700;
 }
 
 table {
@@ -212,9 +261,7 @@ td {
     text-align: left;
 }
 
-th {
-    background: #e2e8f0;
-}
+th { background: #e2e8f0; }
 
 .cart-actions {
     margin-top: 1rem;
@@ -231,11 +278,12 @@ th {
     text-align: center;
 }
 
-/* Tablet */
+@media (min-width: 640px) {
+    .coupon-row { grid-template-columns: 1fr auto; }
+}
+
 @media (min-width: 768px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
 
     .feature-grid,
     .checkout-grid,
@@ -244,13 +292,7 @@ th {
     }
 }
 
-/* Desktop */
 @media (min-width: 1024px) {
-    .product-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .feature-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    .product-grid { grid-template-columns: repeat(3, 1fr); }
+    .feature-grid { grid-template-columns: repeat(3, 1fr); }
 }
