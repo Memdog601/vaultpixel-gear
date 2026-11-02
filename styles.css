@@ -296,3 +296,42 @@ th { background: #e2e8f0; }
     .product-grid { grid-template-columns: repeat(3, 1fr); }
     .feature-grid { grid-template-columns: repeat(3, 1fr); }
 }
+
+/* Milestone 4: interactive cart and inventory states */
+.product-actions {
+    display: flex;
+    gap: .6rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.stock { font-weight: 700; color: var(--success); }
+.stock-empty { color: var(--danger); }
+.product-card.out-of-stock {
+    opacity: .55;
+    filter: grayscale(1);
+}
+.product-card.out-of-stock:hover { transform: none; }
+.add-cart-button:disabled { cursor: not-allowed; opacity: .7; }
+.cart-feedback {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 20;
+    padding: .9rem 1.1rem;
+    border-radius: 8px;
+    background: var(--ink);
+    color: var(--white);
+    font-weight: 700;
+    opacity: 0;
+    transform: translateY(18px);
+    pointer-events: none;
+}
+.cart-feedback.show { animation: cart-pop 1.8s ease; }
+@keyframes cart-pop {
+    0% { opacity: 0; transform: translateY(18px) scale(.95); }
+    15%, 75% { opacity: 1; transform: translateY(0) scale(1.03); }
+    100% { opacity: 0; transform: translateY(8px) scale(1); }
+}
+.quantity-controls { display: flex; gap: .55rem; align-items: center; }
+.qty-button { min-width: 2.2rem; padding: .35rem .55rem; }
+.remove-button, .danger-button { background: var(--danger); }

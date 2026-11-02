@@ -3,7 +3,7 @@
 <head>
   <!--
       Author: Memphis Mitchell
-      Date: 10/25/2026
+      Date: 11/01/2026
       Purpose: Checkout page for the VaultPixel Gear e-commerce project.
   -->
   <meta charset="UTF-8">
@@ -20,7 +20,7 @@
       <a href="index.html">Home</a>
       <a href="shop.html">Shop</a>
       <a href="contact.html">Contact</a>
-      <a href="cart.html">Cart</a>
+      <a href="cart.html">Cart (<span class="cart-count">0</span>)</a>
       <a href="checkout.html">Checkout</a>
     </nav>
   </div>
@@ -113,15 +113,12 @@
 
     <aside class="summary-card" aria-labelledby="order-heading">
       <h2 id="order-heading">Order Review</h2>
-      <ul class="order-lines">
-        <li class="order-line"><span>Pulse 75 Keyboard × 1</span><strong>$89.99</strong></li>
-        <li class="order-line"><span>Nova RGB Desk Mat × 1</span><strong>$39.99</strong></li>
-      </ul>
+<ul id="checkoutItems" class="order-lines"></ul>
       <p class="order-line"><span>Subtotal</span><strong id="subtotal">$0.00</strong></p>
       <p class="order-line"><span>Shipping</span><strong id="shipping">$0.00</strong></p>
       <p class="order-line"><span>Discount</span><strong id="discount">-$0.00</strong></p>
       <p class="total-line"><span>Total</span><strong id="orderTotal">$0.00</strong></p>
-      <button type="submit">Validate & Place Order</button>
+      <button type="submit">Place Order</button>
       <p id="checkoutStatus" class="form-status" aria-live="polite"></p>
       <p><small>This course prototype does not process real payments.</small></p>
     </aside>
