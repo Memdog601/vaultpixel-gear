@@ -1,7 +1,7 @@
 /*
     Project: VaultPixel Gear
     Author: Memphis Mitchell
-    Updated: 11/01/2026
+    Updated: 11/08/2026
     Purpose: Product rendering, persistent cart, inventory, checkout, validation, and coupon discounts.
 */
 
@@ -483,4 +483,71 @@ document.addEventListener("DOMContentLoaded", () => {
     setupContactForm();
     setupCartPage();
     setupCheckout();
+});
+
+// Grand Opening milestone: product detail rendering and local network diagnostics.
+function renderProductDetail() {
+    const title = document.getElementById("detailName");
+    if (!title) return;
+
+    const params = new URLSearchParams(window.location.search);
+    const requestedId = Number(params.get("id")) || 1;
+    const product = products.find(item => item.id === requestedId) || products[0];
+    const stock = loadStock();
+    const available = stock[product.id] ?? 0;
+
+    document.getElementById("detailCategory").textContent = product.category;
+    title.textContent = product.name;
+    document.getElementById("detailDescription").textContent = product.description;
+    document.getElementById("detailPrice").textContent = money(product.price);
+    document.getElementById("detailStock").textContent = available > 0 ? `${available} in stock` : "Out of Stock";
+    document.getElementById("detailArt").textContent = product.icon;
+
+    const button = document.getElementById("detailAddCart");
+    button.disabled = available <= 0;
+    button.textContent = available > 0 ? "Add to Cart" : "Out of Stock";
+    button.title = available > 0 ? `Add ${product.name} to cart` : "Out of Stock";
+    if (available > 0) button.addEventListener("click", () => {
+        addToCart(product.id);
+        renderProductDetail();
+    });
+}
+
+function setCookie(name, value, days = 30) {
+    const expires = new Date(Date.now() + days * 86400000).toUTCString();
+    document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/; SameSite=Lax`;
+}
+
+function getCookie(name) {
+    const prefix = `${name}=`;
+    const entry = document.cookie.split("; ").find(row => row.startsWith(prefix));
+    return entry ? decodeURIComponent(entry.slice(prefix.length)) : "";
+}
+
+function renderNetworkTest() {
+    const host = document.getElementById("hostName");
+    if (!host) return;
+
+    const previousLaunch = getCookie("lastUplink");
+    const currentLaunch = new Date().toLocaleString();
+    const isLocalServer = window.location.protocol === "http:" || window.location.protocol === "https:";
+
+    host.textContent = window.location.hostname || "Local static file";
+    document.getElementById("commPort").textContent = window.location.port || (window.location.protocol === "https:" ? "443" : window.location.protocol === "http:" ? "80" : "N/A");
+    document.getElementById("protocol").textContent = window.location.protocol.replace(":", "").toUpperCase() || "FILE";
+    document.getElementById("lastLaunch").textContent = previousLaunch || "First local launch";
+
+    const status = document.getElementById("networkStatus");
+    status.textContent = isLocalServer ? "Network recognized. VaultPixel Gear is running through a local web server." : "Offline/static-file mode detected. Launch with Live Server to recognize the local network.";
+    status.className = isLocalServer ? "network-online" : "network-offline";
+
+    if (isLocalServer) setCookie("lastUplink", currentLaunch);
+
+    const refresh = document.getElementById("refreshNetwork");
+    if (refresh) refresh.addEventListener("click", () => window.location.reload());
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    renderProductDetail();
+    renderNetworkTest();
 });

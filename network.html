@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VaultPixel Gear local network connection test.">
+  <title>Network Connection Test | VaultPixel Gear</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html">VaultPixel Gear</a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="product.html">Product</a>
+      <a href="cart.html">Cart <span class="cart-count" aria-label="items in cart">0</span></a>
+      <a href="checkout.html">Checkout</a>
+      <a href="contact.html">Contact</a>
+      <a href="network.html" aria-current="page">Network Test</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero network-hero">
+    <p class="eyebrow network-eyebrow">System Diagnostics</p>
+    <h1>Network Connection Test</h1>
+    <p id="networkStatus">Checking local connection...</p>
+  </section>
+
+  <section class="network-panel" aria-labelledby="connection-heading">
+    <h2 id="connection-heading">Connection Information</h2>
+    <dl class="network-grid">
+      <div><dt>Local Host Name</dt><dd id="hostName">Checking...</dd></div>
+      <div><dt>Current Communication Port</dt><dd id="commPort">Checking...</dd></div>
+      <div><dt>Current Transmission Protocol</dt><dd id="protocol">Checking...</dd></div>
+      <div><dt>Last Time Launched</dt><dd id="lastLaunch">Checking...</dd></div>
+    </dl>
+    <button id="refreshNetwork" type="button">Refresh Connection Test</button>
+  </section>
+</main>
+<footer class="site-footer"><p>&copy; 2026 VaultPixel Gear. Student project by memmit6084.</p></footer>
+</body>
+</html>
